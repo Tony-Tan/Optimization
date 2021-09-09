@@ -6,7 +6,7 @@ This folder is the collection of[ ] Algorithms in chapter 1-12 of the book 'Nume
 - [ ] Algorithm 3.1 (Backtracking Line Search)
 - [ ] Algorithm 3.2 (Line Search Newton with Modification)
 - [ ] Algorithm 3.3 (Cholesky with Added Multiple of the Identity)
-- [ ] Algorithm 3.4 (CholeskyFactorization,LDLT Form)
+- [ ] Algorithm 3.4 (CholeskyFactorization,$LDL^T$ Form)
 - [ ] Algorithm 3.5 (Line Search[ ] Algorithm)
 - [ ] Algorithm 3.6 (zoom)
 - [ ] Algorithm 4.1 (Trust Region)

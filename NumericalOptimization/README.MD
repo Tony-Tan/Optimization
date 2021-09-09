@@ -1,5 +1,5 @@
 ## Numerical Optimization
-This folder is the collection of[ ] Algorithms in chapter 1-12 of the book 'Numerical Optimization' by Nocedal, Jorge, and Stephen J. Wright
+This folder is the collection of Algorithms in chapter 1-12 of the book 'Numerical Optimization' by Nocedal, Jorge, and Stephen J. Wright
 
 
 ### Algorithms List

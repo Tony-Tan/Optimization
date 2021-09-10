@@ -10,10 +10,16 @@ class BacktrackingLineSearch:
     def __call__(self, objective_function, x_k, p_k, gradient_k, alpha=0):
         if alpha == 0:
             alpha = random.random() * 2
-        while objective_function(x_k + alpha * p_k) > \
-                objective_function(x_k) + \
-                self.c * alpha * gradient_k.dot(p_k):
+        f_x_p = objective_function(x_k + alpha * p_k)
+        f_x = objective_function(x_k)
+        inc = self.c * alpha * gradient_k.dot(p_k)
+        # while objective_function(x_k + alpha * p_k) > \
+        #         objective_function(x_k) + \
+        #         self.c * alpha * gradient_k.dot(p_k):
+        while f_x_p > f_x + inc:
             alpha *= self.rho
+            f_x_p = objective_function(x_k + alpha * p_k)
+            inc = self.c * alpha * gradient_k.dot(p_k)
         return alpha
 
 

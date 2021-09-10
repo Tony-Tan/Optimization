@@ -21,11 +21,30 @@ class ObjectiveFunction:
     def derivative(self, point):
         pass
 
+    def draw_derivative(self, points):
+        folder_name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+        figure_save_path = os.path.join('./data/exp/', 'derivative_'+folder_name)
+        os.mkdir(figure_save_path)
+        for i in range(len(points)):
+            derivative = self.derivative(points[i])
+            # derivative = derivative/4
+            plt.figure(figsize=(15, 15))
+            x = np.linspace(-1.5, 1.5, 300)
+            y = np.linspace(-1.5, 1.5, 300)
+            X, Y = np.meshgrid(x, y)  # 获得网格坐标矩阵
+            c = plt.contour(X, Y, self.__call__(np.array([X, Y])), 40, colors='green')
+            plt.clabel(c, inline=True, fontsize=10)
+            plt.quiver(points[i][0], points[i][1], points[i][0] + derivative[0], points[i][1] + derivative[1])
+
+            plt.xticks(())
+            plt.yticks(())
+            plt.savefig(os.path.join(figure_save_path, str(i) + '.jpg'))
+
     def draw_counter(self, point_sequence=None):
         figure_save_path = None
         if point_sequence is not None:
             folder_name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
-            figure_save_path = os.path.join('./data/exp/', folder_name)
+            figure_save_path = os.path.join('./data/exp/', 'frame_'+folder_name)
             os.mkdir(figure_save_path)
         if point_sequence is None:
             point_sequence = []
@@ -57,18 +76,18 @@ class OFExample(ObjectiveFunction):
 
     def __call__(self, point):
         x, y = point
-        return -(1 - x / 2 + x ** 5 + 0.3 * np.sin(5 * y ** 3)) * np.exp(-x ** 2 - y ** 2)
+        return (np.sin(4*y)+x**2+y**2)*np.exp(0.1*(x+y))
 
     def derivative(self, point):
         x, y = point
-        g = -(1. - x / 2. + x ** 5 + 0.3 * np.sin(5 * y ** 3))
-        g_x = -(-1 / 2 + 5 * x ** 4)
-        g_y = -(0.3 * np.cos(5 * y ** 3) * 15 * y * 2)
-        h = -x ** 2 - y ** 2
-        h_x = -2 * x
-        h_y = -2 * y
-        x_ = g_x * np.exp(h) + g * h * np.exp(h) * h_x
-        y_ = g_y * np.exp(h) + g * h * np.exp(h) * h_y
+        g = (np.sin(4*y)+x**2+y**2)
+        h = np.exp(0.1*(x+y))
+        g_x = 2*x
+        g_y = np.cos(4*y)*4 + 2*y
+        h_x = h*(0.1*(x+y))*0.1
+        h_y = h*(0.1*(x+y))*0.1
+        x_ = h*g_x + g*h_x
+        y_ = h*g_y + g*h_y
         return np.array([x_, y_])
 
 
@@ -88,10 +107,11 @@ class Quadratic(ObjectiveFunction):
 
 
 if __name__ == '__main__':
-    of = Quadratic()
+    of = OFExample()
     # generate a sequence with 10 point
     sequence_ = []
     for i in range(10):
         sequence_.append(np.array([random.random() * 2 - 1., random.random() * 2 - 1.]))
-    of.draw_counter(sequence_, True)
+    # of.draw_counter(sequence_)
+    of.draw_derivative(sequence_)
 

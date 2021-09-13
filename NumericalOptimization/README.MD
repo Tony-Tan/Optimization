@@ -3,7 +3,7 @@ This folder is the collection of Algorithms in chapter 1-12 of the book 'Numeric
 
 
 ### Algorithms List
-- [ ] Algorithm 3.1 (Backtracking Line Search)
+- [x] Algorithm 3.1 (Backtracking Line Search)
 - [ ] Algorithm 3.2 (Line Search Newton with Modification)
 - [ ] Algorithm 3.3 (Cholesky with Added Multiple of the Identity)
 - [ ] Algorithm 3.4 (CholeskyFactorization,$LDL^T$ Form)

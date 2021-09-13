@@ -12,10 +12,11 @@ class SteepestDescent:
     def __init__(self, objective_function):
         self.obj_f = objective_function
 
-    def run(self, threshold_delta_value, step_size=0):
+    def run(self, threshold_delta_value, step_size=0.0, x_init=None):
         x_sequence = []
         delta = sys.float_info.max
-        x_k = np.array([random.random() * 2 - 1, random.random() * 2 - 1])
+
+        x_k = np.array([random.random() * 2 - 1, random.random() * 2 - 1]) if x_init is None else x_init
         if step_size == 0:
             bls = backtracking_line_search.BacktrackingLineSearch(rho=0.9, c=1e-4)
             f_value = self.obj_f(x_k)
@@ -45,5 +46,5 @@ class SteepestDescent:
 if __name__ == '__main__':
     obj_f = of.OFExample()
     sd_test = SteepestDescent(obj_f)
-    x_s = sd_test.run(0.0001)
+    x_s = sd_test.run(0.0001, step_size=0.0, x_init=[1.3, -1.3])
     obj_f.draw_counter(x_s)

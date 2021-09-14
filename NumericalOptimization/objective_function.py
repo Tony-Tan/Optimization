@@ -128,6 +128,13 @@ class Quadratic(ObjectiveFunction):
         y_ = 2 * y
         return np.array([x_, y_])
 
+    def hessian(self, point):
+        xx = 4
+        xy = 0
+        yx = 0
+        yy = 2
+        return np.array([[xx, xy], [yx, yy]])
+
 
 if __name__ == '__main__':
     of = OFExample()

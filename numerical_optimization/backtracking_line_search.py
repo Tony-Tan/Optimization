@@ -24,6 +24,6 @@ class BacktrackingLineSearch:
 
 
 if __name__ == '__main__':
-    bls = BacktrackingLineSearch(rho=0.7,c=0.5)
+    bls = BacktrackingLineSearch(rho=0.7, c=0.5)
     OF_Q = of.Quadratic
 

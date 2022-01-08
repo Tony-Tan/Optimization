@@ -12,7 +12,7 @@ or you can follow my twitter:
 [![Twitter Follow](https://img.shields.io/twitter/follow/anthony_tan?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/anthony_s_tan)
 
 
-## [Numerical Optimization](./NumericalOptimization)
+## [Numerical Optimization](./numerical_optimization)
 Nocedal, Jorge, and Stephen J. Wright. Numerical Optimization. 2nd ed. Springer Series in Operations Research. New York: Springer, 2006.
 
 

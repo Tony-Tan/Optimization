@@ -5,6 +5,7 @@ import time
 from rich.progress import track
 import random
 
+
 # if you work with pycharm, to make rich package work
 # you have to enable “emulate terminal” in output console
 # option in run/debug configuration to see styled output.
@@ -23,7 +24,7 @@ class ObjectiveFunction:
 
     def draw_derivative(self, points):
         folder_name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
-        figure_save_path = os.path.join('./data/exp/', 'derivative_'+folder_name)
+        figure_save_path = os.path.join('./data/exp/', 'derivative_' + folder_name)
         os.mkdir(figure_save_path)
         for i in range(len(points)):
             derivative = self.derivative(points[i])
@@ -44,7 +45,7 @@ class ObjectiveFunction:
         figure_save_path = None
         if point_sequence is not None:
             folder_name = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
-            figure_save_path = os.path.join('./data/exp/', 'frame_'+folder_name)
+            figure_save_path = os.path.join('./data/exp/', 'frame_' + folder_name)
             os.mkdir(figure_save_path)
         if point_sequence is None:
             point_sequence = []
@@ -76,18 +77,12 @@ class OFExample(ObjectiveFunction):
 
     def __call__(self, point):
         x, y = point
-        return (np.sin(4*y)+x**2+y**2)*np.exp(0.1*(x+y))
+        return np.sin(4 * y) + np.cos(5 * x) + np.exp(y) * x ** 2 + np.exp(x) * y ** 2
 
     def derivative(self, point):
         x, y = point
-        g = (np.sin(4*y)+x**2+y**2)
-        h = np.exp(0.1*(x+y))
-        g_x = 2*x
-        g_y = np.cos(4*y)*4 + 2*y
-        h_x = h*(0.1*(x+y))*0.1
-        h_y = h*(0.1*(x+y))*0.1
-        x_ = h*g_x + g*h_x
-        y_ = h*g_y + g*h_y
+        x_ = -np.sin(5 * x) * 5 + 2 * np.exp(y) * x + np.exp(x) * y ** 2
+        y_ = np.cos(4 * y) * 4 + np.exp(y) * x ** 2 + 2 * np.exp(x) * y
         return np.array([x_, y_])
 
 
@@ -97,12 +92,12 @@ class Quadratic(ObjectiveFunction):
 
     def __call__(self, point):
         x, y = point
-        return 2*x**2+y**2
+        return 2 * x ** 2 + y ** 2
 
     def derivative(self, point):
         x, y = point
-        x_ = 4*x
-        y_ = 2*y
+        x_ = 4 * x
+        y_ = 2 * y
         return np.array([x_, y_])
 
 
@@ -114,4 +109,3 @@ if __name__ == '__main__':
         sequence_.append(np.array([random.random() * 2 - 1., random.random() * 2 - 1.]))
     # of.draw_counter(sequence_)
     of.draw_derivative(sequence_)
-

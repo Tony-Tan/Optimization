@@ -1,5 +1,3 @@
-import random
-
 import numpy as np
 import backtracking_line_search
 import sys

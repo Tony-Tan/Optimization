@@ -1,12 +1,10 @@
 # Optimization
 This project is a collection of Optimization Algorithms that I have studied. Most of them are employed in machine learning especially in reinforcement learning. And almost all of them are unconstrained problems.
 
-More Related Research can be found in my blog and research notes on:
+More Related Research can be found in my blog at:
 
 
-[![website_online](./logo_online.png)](https://anthony-tan.online)
-
-[![Website_rn](./logo_rn.png)](https://rn.anthony-tan.online)
+[![website_online](./logo.png)](https://anthony-tan.com)
 
 or you can follow my twitter: 
 [![Twitter Follow](https://img.shields.io/twitter/follow/anthony_tan?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/anthony_s_tan)

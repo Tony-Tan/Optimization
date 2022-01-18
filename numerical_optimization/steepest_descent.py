@@ -4,7 +4,7 @@ import numpy as np
 import backtracking_line_search
 import sys
 import random
-import objective_function as of
+import test_functions.test_functions as test_f
 import copy
 
 
@@ -44,7 +44,7 @@ class SteepestDescent:
 
 
 if __name__ == '__main__':
-    obj_f = of.OFExample()
+    obj_f = test_f.GoldsteinPriceFunction()
     sd_test = SteepestDescent(obj_f)
     x_s = sd_test.run(0.0001, step_size=0.0, x_init=[1.3, -1.3])
-    obj_f.draw_counter(x_s)
+    obj_f.save(x_s)

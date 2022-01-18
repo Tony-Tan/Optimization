@@ -1,5 +1,5 @@
+# algorithm 3.1 backtracking line search
 import random
-import objective_function as of
 
 
 class BacktrackingLineSearch:

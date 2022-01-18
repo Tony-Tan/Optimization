@@ -1,0 +1,36 @@
+## Numerical Optimization
+This folder is the collection of Algorithms in chapter 1-12 of the book 'Numerical Optimization' by Nocedal, Jorge, and Stephen J. Wright
+
+
+### Algorithms List
+- [x] Algorithm 3.1 (Backtracking Line Search)
+- [ ] Algorithm 3.2 (Line Search Newton with Modification)
+- [ ] Algorithm 3.3 (Cholesky with Added Multiple of the Identity)
+- [ ] Algorithm 3.4 (CholeskyFactorization,$LDL^T$ Form)
+- [ ] Algorithm 3.5 (Line Search[ ] Algorithm)
+- [ ] Algorithm 3.6 (zoom)
+- [ ] Algorithm 4.1 (Trust Region)
+- [ ] Algorithm 4.2 (Cauchy Point Calculation)
+- [ ] Algorithm 4.3 (Trust Region Subproblem)
+- [ ] Algorithm 4.4 (Generalized Cauchy Point Calculation)
+- [ ] Algorithm 5.1 (CG–Preliminary Version)
+- [ ] Algorithm 5.2 (CG)
+- [ ] Algorithm 5.3 (Preconditioned CG)
+- [ ] Algorithm 5.4 (FR)
+- [ ] Algorithm 6.1 (BFGS Method)
+- [ ] Algorithm 6.2 (SR1 Trust-Region Method)
+- [ ] Algorithm 7.1 (Line Search Newton–CG)
+- [ ] Algorithm 7.2 (CG–Steihaug)
+- [ ] Algorithm 7.3 (Inexact Modiﬁed Cholesky)
+- [ ] Algorithm 7.4 (L-BFGS two-loop recursion)
+- [ ] Algorithm 7.5 (L-BFGS)
+- [ ] Algorithm 8.1
+- [ ] Algorithm 9.1 (Model-Based Derivative-Free Method)
+- [ ] Algorithm 9.2 (Pattern-Search)
+- [ ] Algorithm 9.3 (DFO Method of Conjugate Directions)
+- [ ] Algorithm 9.6 (Implicit Filtering)
+- [ ] Algorithm 11.1 (Newton’s Method for Nonlinear Equations)
+- [ ] Framework 11.2 (Inexact Newton for Nonlinear Equations)
+- [ ] Algorithm 11.3 (Broyden)
+- [ ] Algorithm 11.4 (Line Search Newton-like Method)
+- [ ] Algorithm 11.5 (Trust-Region Method for Nonlinear Equations)
